@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio do Restaurante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #b16c6c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #cardapio-container {
+            position: relative;
+        }
+
+        #cardapio {
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            background-color: #45a0a3;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(202, 22, 22, 0.1);
+            z-index: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pulsating-border {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 18px;
+            z-index: 0;
+            animation: pulse 2s infinite;
+        }
+
+        h1 {
+            color: #bce40986;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            font-size: 24px;
+            line-height: 1.4;
+            background: linear-gradient(90deg, #003366, #006699, #003366);
+            background-size: 200% 100%;
+            animation: gradientBG 4s linear infinite;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        /* Animação pulsante ao redor do cardápio */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 10px rgba(0, 128, 0, 0.5);
+            }
+
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 20px rgba(0, 128, 0, 0.7);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 10px rgba(0, 128, 0, 0.5);
+            }
+        }
+
+        /* Animação de fundo azul escuro piscante para o título */
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .prato {
+            position: relative;
+            border: 1px solid #120fe4;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #1634df;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        /* Adicionado estilo para o preço do prato */
+        .preco {
+            margin-top: 8px;
+            color: #ffc107;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cardapio-container">
+        <div class="pulsating-border"></div>
+        <div id="cardapio">
+            <h1>Cardápio do Restaurante</h1>
+            <div id="pratos"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
